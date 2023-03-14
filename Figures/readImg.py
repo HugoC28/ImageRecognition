@@ -43,5 +43,5 @@ for nb in range(10):
         fileStrName=filePath+str(i)+".png"
         dataList=np.concatenate((dataList,greyPngToVector(fileStrName)),axis=None)
         answerList=np.concatenate((answerList,numberToAnswerVector(nb)),axis=None)
-csvWrite('BDD_img',dataList)
-csvWrite('BDD_ans',answerList)
+csvWrite('Figures/BDD_img',dataList)
+csvWrite('Figures/BDD_ans',answerList)
