@@ -38,7 +38,7 @@ def numberToAnswerVector(answer):
 dataList=np.array([])
 answerList=np.array([])
 for nb in range(10):
-    filePath = "dataset/"+str(nb)+"/"
+    filePath = "Figures/dataset/"+str(nb)+"/"
     for i in range(1,21):
         fileStrName=filePath+str(i)+".png"
         dataList=np.concatenate((dataList,greyPngToVector(fileStrName)),axis=None)
