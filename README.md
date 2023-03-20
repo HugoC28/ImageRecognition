@@ -7,7 +7,7 @@ To symplify the preprocessing step, we collect all data from PNG files with the 
 
 ## Weeds Recognition
 After working on figures, we had to change our method for the farming application. Indeed our weeds [dataset](Weeds/dataset/) (based on [4Weed Dataset](https://arxiv.org/abs/2204.00080)) is much heavier than the figures one. With colored pictures of thousands of pixels, it is impossible to use our basic C program, it will take to much time and power to proceed.
-That's why we choose to use keras Python library.
+That's why we choose to use the Python library Keras from TensorFlow.
 We randomly separated our dataset into 3 folders : [train](Weeds/dataset/train/) (around 80% of the dataset), [validation](Weeds/dataset/validation/) (around 10%) and [test](Weeds/dataset/test/) (around 10%). Each folder will be used at different step of the process.
 
 ### Usage
