@@ -31,7 +31,8 @@ for filename in os.listdir(folder_path):
 
     # Faire une prédiction sur l'image
     prediction = model.predict(image_array)
+    index_max_prediction = np.argmax(prediction)
+    class_prediction= "Cocklebur" if index_max_prediction==0 else ("Foxtail" if index_max_prediction==1 else ("Pigweed" if index_max_prediction==2 else ("Ragweed")))
 
     # Afficher la prédiction
-    print("Nom du fichier : "+filename+" et la prédiction est ")
-    print(prediction)
+    print("The image "+filename+" is a "+class_prediction+" with a probability of "+str(np.around(prediction[0][index_max_prediction]*100,decimals=2))+"%.")
