@@ -11,10 +11,10 @@ That's why we choose to use keras Python library.
 We randomly separated our dataset into 3 folders : [train](Weeds/dataset/train/) (around 80% of the dataset), [validation](Weeds/dataset/validation/) (around 10%) and [test](Weeds/dataset/test/) (around 10%). Each folder will be used at different step of the process.
 
 ### Usage
-You first have to create what is called on Keras a model. This model is too heavy to be uploaded on this repository, so you'll need to generate it by your own. You just have to execute [modelGeneration.py](/Weeds/modelGeneration.py), with the parameters of your choice (batch_size, epochs, IMG_HEIGHT, IMG_WIDTH). Depending on these parameters, it could take a lot of time to train the CNN. Once the processing is done, it will create a new file called *model.h5*.
+You first have to create what is called on Keras a model. This model is too heavy to be uploaded on this repository, so you'll need to generate it by your own. You just have to execute [modelGeneration.py](Weeds/modelGeneration.py), with the parameters of your choice (batch_size, epochs, IMG_HEIGHT, IMG_WIDTH). Depending on these parameters, it could take a lot of time to train the CNN. Once the processing is done, it will create a new file called *model.h5*.
 You could now go to the recognition process.
 
-For this part, you have to execute 
+For this part, you have to execute [modelExecution.py](Weeds/modelExecution.py) with the same value for IMG_HEIGHT and IMG_WIDTH. The test process will use the [test dataset](Weeds/dataset/test/) and the model generated before. For each image in this dataset, it will answer a prediction of this type :
 
 ```
 The image file_name.png is a predicted_class with a probability of p %.
