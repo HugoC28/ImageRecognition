@@ -4,7 +4,7 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 
 
 # Le chemin d'accès au dossier
-folder_path = "Weeds/dataset/test/"
+folder_path = "Weeds/dataset/test/" #replace by folder_path = "dataset/test/" if it doesn't work.
 
 IMG_HEIGHT = 224
 IMG_WIDTH = 224
@@ -27,7 +27,7 @@ for filename in os.listdir(folder_path):
     image_array = image_array / 255.0
 
     # Charger le modèle sauvegardé
-    model = keras.models.load_model('Weeds/model.h5')
+    model = keras.models.load_model('Weeds/model.h5') #replace by 'model.h5' if it doesn't work.
 
     # Faire une prédiction sur l'image
     prediction = model.predict(image_array)
