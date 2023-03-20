@@ -35,4 +35,4 @@ for filename in os.listdir(folder_path):
     class_prediction= "Cocklebur" if index_max_prediction==0 else ("Foxtail" if index_max_prediction==1 else ("Pigweed" if index_max_prediction==2 else ("Ragweed")))
 
     # Afficher la prédiction
-    print("The image "+filename+" is a "+class_prediction+" with a probability of "+str(np.around(prediction[0][index_max_prediction]*100,decimals=2))+"%.")
+    print("The image "+filename+" is a "+class_prediction+" with a probability of "+str(np.around(prediction[0][index_max_prediction]*100,decimals=2))+" %.")
