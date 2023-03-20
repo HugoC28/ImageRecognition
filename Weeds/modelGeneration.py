@@ -10,8 +10,8 @@ IMG_HEIGHT = 224
 IMG_WIDTH = 224
 
 # Définir les chemins d'accès aux données
-train_dir = 'Weeds/dataset/train/'
-validation_dir = 'Weeds/dataset/validation/'
+train_dir = 'Weeds/dataset/train/' #replace by train_dir = "dataset/train/" if it doesn't work.
+validation_dir = 'Weeds/dataset/validation/' #replace by validation_dir = "dataset/validation/" if it doesn't work.
 
 # Prétraiter les images
 train_image_generator = ImageDataGenerator(rescale=1./255,
