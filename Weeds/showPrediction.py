@@ -47,7 +47,7 @@ photo = ImageTk.PhotoImage(image)
 label_image.configure(image=photo)
 
 # Ajouter une étiquette pour afficher du texte
-label_texte = CTk.CTkLabel(fenetre, text="Cliquez sur le bouton pour prédire l'espèce d'une mauvaise herbe.",font=('Arial', 20))
+label_texte = CTk.CTkLabel(fenetre, text="Click on the button to predict the species of a weed.",font=('Arial', 20))
 label_texte.pack()
 
 # Définir une fonction à appeler lorsqu'on clique sur le bouton
@@ -94,7 +94,7 @@ def on_click():
     label_image.configure(image=photo)
 
 # Ajouter un bouton cliquable
-bouton = CTk.CTkButton(fenetre, text="Nouvelle Image", command=on_click)
+bouton = CTk.CTkButton(fenetre, text="New Image", command=on_click)
 bouton.pack()
 
 # Lancer la boucle principale de la fenêtre
