@@ -4,10 +4,10 @@ import tensorflow as tf
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 # Définir les paramètres
-batch_size = 32
+batch_size = 32 # Nombre d'image avant actualisation des poids
 epochs = 20 # Nombre d'itérations
-IMG_HEIGHT = 224
-IMG_WIDTH = 224
+IMG_HEIGHT = 500
+IMG_WIDTH = 500
 
 # Définir les chemins d'accès aux données
 train_dir = 'Weeds/dataset/train/' #replace by train_dir = "dataset/train/" if it doesn't work.
@@ -62,5 +62,5 @@ history = model.fit(
 )
 
 # Sauvegarder le modèle
-model.save("model.h5")
+model.save("Weeds/model.h5")
 

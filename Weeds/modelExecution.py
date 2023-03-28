@@ -1,13 +1,14 @@
 import os
 from tensorflow import keras
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
+import numpy as np
 
 
 # Le chemin d'accès au dossier
 folder_path = "Weeds/dataset/test/" #replace by folder_path = "dataset/test/" if it doesn't work.
 
-IMG_HEIGHT = 224
-IMG_WIDTH = 224
+IMG_HEIGHT = 500
+IMG_WIDTH = 500
 
 # Parcourir chaque fichier du dossier
 for filename in os.listdir(folder_path):

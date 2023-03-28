@@ -11,8 +11,8 @@ import random as rd
 folder_path = "Weeds/dataset/test/"
 images_list = os.listdir(folder_path)
 
-IMG_HEIGHT = 224
-IMG_WIDTH = 224
+IMG_HEIGHT = 500
+IMG_WIDTH = 500
 
 # Créer une fenêtre centrée à l'écran
 fenetre = CTk.CTk()
