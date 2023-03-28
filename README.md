@@ -19,3 +19,8 @@ For this part, you need to run [modelExecution.py](Weeds/modelExecution.py) with
 ```
 The image file_name.png is a predicted_class with a probability of p %.
 ```
+
+We have also created a basic graphical interface to demonstrate our results. It randomly selects an image from our dataset and shows the prediction in this form :
+
+![image](https://user-images.githubusercontent.com/103205458/228286168-6f305fdb-b87f-487b-a232-c42ce89bad72.png)
+
