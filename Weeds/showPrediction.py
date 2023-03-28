@@ -8,7 +8,7 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 import random as rd
 
 # Le chemin d'accès au dossier
-folder_path = "ImageRecognition/Weeds/dataset/test/"
+folder_path = "Weeds/dataset/test/"
 images_list = os.listdir(folder_path)
 
 IMG_HEIGHT = 224
@@ -31,7 +31,7 @@ fenetre.resizable(width=0, height=0)
 fenetre.title("Image Recognition")
 
 # Charger l'image avec la bibliothèque PIL
-image = Image.open("ImageRecognition/Weeds/dataset/test/foxtail (1).jpg")
+image = Image.open("Weeds/dataset/test/foxtail (1).jpg")
 width, height = image.size
 ratio = 600/height
 newSize = (int(width*ratio),int(height*ratio))
@@ -70,7 +70,7 @@ def on_click():
     image_array = image_array / 255.0
 
     # Charger le modèle sauvegardé
-    model = keras.models.load_model('ImageRecognition/Weeds/model.h5')
+    model = keras.models.load_model('Weeds/model.h5')
 
     # Faire une prédiction sur l'image
     prediction = model.predict(image_array)
