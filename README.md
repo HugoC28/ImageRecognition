@@ -20,6 +20,6 @@ For this part, you need to run [modelExecution.py](Weeds/modelExecution.py) with
 The image file_name.png is a predicted_class with a probability of p %.
 ```
 
-We have also created a basic graphical interface to demonstrate our results. It randomly selects an image from our dataset and shows the prediction in this form :
+We have also created a basic graphical interface to demonstrate our results : [showPrediction.py](Weeds/showPrediction.py). It randomly selects an image from our dataset and shows the prediction in this form :
 
 ![image](https://user-images.githubusercontent.com/103205458/229785655-e344d125-e0ab-4ac3-994f-ed87285ccd82.png)
