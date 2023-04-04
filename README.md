@@ -22,4 +22,4 @@ The image file_name.png is a predicted_class with a probability of p %.
 
 We have also created a basic graphical interface to demonstrate our results : [showPrediction.py](Weeds/showPrediction.py). It randomly selects an image from our dataset and shows the prediction in this form :
 
-![image](https://user-images.githubusercontent.com/103205458/229785655-e344d125-e0ab-4ac3-994f-ed87285ccd82.png)
+![image](https://user-images.githubusercontent.com/103205458/229816832-a95072f2-63c0-4e7a-b251-89db9d3ee36d.png)
