@@ -12,13 +12,15 @@ import random as rd
 folder_path = "Weeds/dataset/test/"
 images_list = os.listdir(folder_path)
 
+model_path='Weeds/model.h5'
+
 IMG_HEIGHT = 224
-IMG_WIDTH = 224
+IMG_WIDTH = 22
 
 # Créer une fenêtre centrée à l'écran
 fenetre = CTk.CTk()
 width = 1400
-height = 650
+height = 700
 screen_width = fenetre.winfo_screenwidth()  # Width of the screen
 screen_height = fenetre.winfo_screenheight() # Height of the screen
  
@@ -71,7 +73,7 @@ def click_prediction():
     image_array = image_array / 255.0
 
     # Charger le modèle sauvegardé
-    model = keras.models.load_model('Weeds/model.h5')
+    model = keras.models.load_model(model_path)
 
     # Faire une prédiction sur l'image
     prediction = model.predict(image_array)
@@ -117,7 +119,7 @@ def click_choose_file():
         image_array = image_array / 255.0
 
         # Charger le modèle sauvegardé
-        model = keras.models.load_model('Weeds/model.h5')
+        model = keras.models.load_model(model_path)
 
         # Faire une prédiction sur l'image
         prediction = model.predict(image_array)
