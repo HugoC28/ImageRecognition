@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import filedialog
 import customtkinter as CTk
 from PIL import Image, ImageTk
 import os
@@ -11,8 +12,8 @@ import random as rd
 folder_path = "Weeds/dataset/test/"
 images_list = os.listdir(folder_path)
 
-IMG_HEIGHT = 500
-IMG_WIDTH = 500
+IMG_HEIGHT = 224
+IMG_WIDTH = 224
 
 # Créer une fenêtre centrée à l'écran
 fenetre = CTk.CTk()
@@ -51,7 +52,7 @@ label_texte = CTk.CTkLabel(fenetre, text="Click on the button to predict the spe
 label_texte.pack()
 
 # Définir une fonction à appeler lorsqu'on clique sur le bouton
-def on_click():
+def click_prediction():
     ##Prediction
     # Selection d'un fichier aléatoire
     index=rd.randint(0,len(images_list))
@@ -94,8 +95,54 @@ def on_click():
     label_image.configure(image=photo)
 
 # Ajouter un bouton cliquable
-bouton = CTk.CTkButton(fenetre, text="New Image", command=on_click)
+bouton = CTk.CTkButton(fenetre, text="New random image", command=click_prediction)
 bouton.pack()
+
+# Définir une fonction pour ouvrir la boîte de dialogue de sélection de fichiers
+def click_choose_file():
+    # Demander à l'utilisateur de sélectionner un fichier
+    file = filedialog.askopenfilename()
+    # Vérifier si un fichier a été sélectionné
+    if file:
+        # Charger l'image que vous souhaitez prédire
+        image = load_img(file, target_size=(IMG_HEIGHT, IMG_WIDTH))
+
+        # Convertir l'image en tableau numpy
+        image_array = img_to_array(image)
+
+        # Étendre les dimensions du tableau numpy pour qu'il ait la forme (1, 224, 224, 3)
+        image_array = image_array.reshape((1,) + image_array.shape)
+
+        # Prétraiter les données
+        image_array = image_array / 255.0
+
+        # Charger le modèle sauvegardé
+        model = keras.models.load_model('Weeds/model.h5')
+
+        # Faire une prédiction sur l'image
+        prediction = model.predict(image_array)
+        index_max_prediction = np.argmax(prediction)
+        class_prediction= "Cocklebur" if index_max_prediction==0 else ("Foxtail" if index_max_prediction==1 else ("Pigweed" if index_max_prediction==2 else ("Ragweed")))
+
+        # Afficher la prédiction
+        my_text = "The image "+os.path.basename(file)+" is a "+class_prediction+" with a probability of "+str(np.around(prediction[0][index_max_prediction]*100,decimals=2))+" %."
+        label_texte.configure(text = my_text)
+        ##Affichage de l'image
+        global photo
+        # Charger la nouvelle image
+        newImage = Image.open(file)
+        width, height = newImage.size
+        ratio = 600/height
+        newSize = (int(width*ratio),int(height*ratio))
+        newImage = newImage.resize(newSize)
+        # Mettre à jour la variable photo avec la nouvelle image
+        photo = ImageTk.PhotoImage(newImage)
+        # Mettre à jour l'image affichée
+        label_image.configure(image=photo)
+
+# Ajouter un bouton "Parcourir"
+bouton_parcourir = CTk.CTkButton(fenetre, text="Choose file", command=click_choose_file)
+bouton_parcourir.pack()
 
 # Lancer la boucle principale de la fenêtre
 fenetre.mainloop()
