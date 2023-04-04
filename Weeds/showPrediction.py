@@ -31,7 +31,7 @@ fenetre.resizable(width=0, height=0)
 fenetre.title("Image Recognition")
 
 # Charger l'image avec la bibliothèque PIL
-image = Image.open("Weeds/dataset/test/foxtail (1).jpg")
+image = Image.open("Weeds/logo recognition.png")
 width, height = image.size
 ratio = 600/height
 newSize = (int(width*ratio),int(height*ratio))
