@@ -57,7 +57,7 @@ label_texte.pack()
 def click_prediction():
     ##Prediction
     # Selection d'un fichier aléatoire
-    index=rd.randint(0,len(images_list))
+    index=rd.randint(0,len(images_list)-1)
     # Le chemin complet du fichier
     file_path = os.path.join(folder_path, images_list[index])
     # Charger l'image que vous souhaitez prédire
