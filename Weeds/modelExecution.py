@@ -5,10 +5,10 @@ import numpy as np
 
 
 # Le chemin d'accès au dossier
-folder_path = "Weeds/dataset/test/" #replace by folder_path = "dataset/test/" if it doesn't work.
+folder_path = "Weeds/dataset/test/"
 
-IMG_HEIGHT = 500
-IMG_WIDTH = 500
+IMG_HEIGHT = 512
+IMG_WIDTH = 512
 
 # Parcourir chaque fichier du dossier
 for filename in os.listdir(folder_path):
@@ -28,7 +28,7 @@ for filename in os.listdir(folder_path):
     image_array = image_array / 255.0
 
     # Charger le modèle sauvegardé
-    model = keras.models.load_model('Weeds/model.h5') #replace by 'model.h5' if it doesn't work.
+    model = keras.models.load_model('Weeds/model.h5')
 
     # Faire une prédiction sur l'image
     prediction = model.predict(image_array)
