@@ -12,10 +12,10 @@ import random as rd
 folder_path = "Weeds/dataset/test/"
 images_list = os.listdir(folder_path)
 
-model_path='Weeds/model32_100_700.h5'
+model_path='Weeds/model.h5'
 
-IMG_HEIGHT = 700
-IMG_WIDTH = 700
+IMG_HEIGHT = 512
+IMG_WIDTH = 512
 
 # Créer une fenêtre centrée à l'écran
 fenetre = CTk.CTk()
