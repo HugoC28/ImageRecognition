@@ -4,6 +4,7 @@ Image recognition project based on CNN for agricultural application.
 ## Figures Recognition
 We first worked on [figure recognition](Figures/), writing a C program to familiarise ourselves with CNN. We designed our own CNN to recognise 25x35 pixel images of figures, based on our manually created [dataset](Figures/dataset/).
 To simplify the pre-processing step, we collect all the data from PNG files with the Python program [readImg.py](Figures/readImg.py) to translate them into the desired format for our C algorithm. It creates 2 CSV files : [BDD_img.csv](Figures/BDD_img.csv) and [BDD_ans.csv](Figures/BDD_ans.csv). The first one corresponds to the values of all the pixels of all the images of the dataset, and the second one to the desired response vector, filled with 0 except a 1 for the index of the figure (ex : [0,0,1,0,0,0,0,0,0,0] if the figure is a 2). This response vector is used by our algorithm to calculate the error and adjust values of all the weights of the CNN in the backpropagation step.
+Then, th program [figureRecognition.c](Figures/figureRecognition.c) uses these 2 CSV files to generate the model, and test it with one figure.
 
 ## Weeds Recognition
 After working on the figures, we had to change our method for the agricultural application. In fact, our weed [dataset](Weeds/dataset/) (based on [4Weed Dataset](https://arxiv.org/abs/2204.00080)) is much heavier than the figure dataset. With colour images of thousands of pixels, it is impossible to use our C program, it will take too much time and power to execute.
