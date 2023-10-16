@@ -1,5 +1,5 @@
 # Image Recognition
-Image recognition project based on CNN for agricultural application.
+Image recognition project based on CNN for agricultural application. Project report written in french available [here](Rapport_projet.pdf).
 
 ## Figures Recognition
 We first worked on [figure recognition](Figures/), writing a C program to familiarise ourselves with CNN. We designed our own CNN to recognise 25x35 pixel images of figures, based on our manually created [dataset](Figures/dataset/).
